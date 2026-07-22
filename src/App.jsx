@@ -1147,13 +1147,14 @@ function App() {
 
                   // Reset active selections if the character was deleted
                   if (currentSenderId === id) {
-                    setCurrentSenderId(characters[0].id);
+                    setCurrentSenderId(staticCharacters[0].id);
                   }
                   if (recipientId === id) {
-                    setRecipientId(characters[0].id);
+                    setRecipientId(staticCharacters[0].id);
                   }
 
                   setDeleteConfirmTarget(null);
+                  setShowSpeakerDropdown(false);
                 }}
               >
                 {isJp ? '削除' : 'Delete'}
