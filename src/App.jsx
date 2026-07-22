@@ -75,6 +75,7 @@ function App() {
   const prevLengthRef = useRef(0);
   const settingsDrawerRef = useRef(null);
   const settingsButtonRef = useRef(null);
+  const speakerDropdownRef = useRef(null);
 
   // Auto-scroll inside the simulator body only when new messages are added or on mount
   useEffect(() => {
@@ -121,6 +122,12 @@ function App() {
           setShowAddCustom(false);
         }
       }
+      if (showSpeakerDropdown) {
+        const clickedDropdown = speakerDropdownRef.current && speakerDropdownRef.current.contains(event.target);
+        if (!clickedDropdown) {
+          setShowSpeakerDropdown(false);
+        }
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -129,7 +136,7 @@ function App() {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
     };
-  }, [showSettings, showAddCustom, isFilePickerActive]);
+  }, [showSettings, showAddCustom, showSpeakerDropdown, isFilePickerActive]);
 
   // Monitor window focus to reset file picker active flag when native dialog closes
   useEffect(() => {
@@ -757,7 +764,7 @@ function App() {
           <form onSubmit={handleAddMessage} className="unified-input-row">
 
             {/* Speaker Select Button & Dropdown */}
-            <div className="dropdown-speaker-container">
+            <div className="dropdown-speaker-container" ref={speakerDropdownRef}>
               <button
                 type="button"
                 className="speaker-dropdown-trigger"
