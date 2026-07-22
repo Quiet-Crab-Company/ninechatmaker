@@ -526,7 +526,7 @@ function App() {
         await new Promise((resolve) => setTimeout(resolve, 50));
 
         const canvas = await html2canvas(tempContainer, {
-          scale: 1,
+          scale: 3,
           backgroundColor: '#e9e9e9',
           useCORS: true,
           logging: false
