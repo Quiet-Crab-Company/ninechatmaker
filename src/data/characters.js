@@ -19,6 +19,15 @@ export const characters = [
     "initialsJp": "彩"
   },
   {
+    "id": "sui",
+    "name": "Yakumo Sui",
+    "nameJp": "八雲 彗",
+    "color": "#008839ff",
+    "avatar": null,
+    "initialsEn": "AG",
+    "initialsJp": "彗"
+  },
+  {
     "id": "kazuki",
     "name": "Aoyama Kazuki",
     "nameJp": "青山カズキ",

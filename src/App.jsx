@@ -34,10 +34,14 @@ function App() {
     return localStorage.getItem('ninechat_recipient_id') || staticCharacters[0].id;
   });
   const [title, setTitle] = useState(() => {
-    return localStorage.getItem('ninechat_title') || 'Title';
+    const val = localStorage.getItem('ninechat_title') || '';
+    if (val === 'Title' || val === 'タイトル') return '';
+    return val;
   });
   const [subtitle, setSubtitle] = useState(() => {
-    return localStorage.getItem('ninechat_subtitle') || 'Change title and subtitle with the gear icon';
+    const val = localStorage.getItem('ninechat_subtitle') || '';
+    if (val === 'Change title and subtitle with the gear icon' || val === '歯車アイコンからタイトルとサブタイトルを変更できます') return '';
+    return val;
   });
   const [language, setLanguage] = useState('en');
   const [isExporting, setIsExporting] = useState(false);

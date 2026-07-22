@@ -119,6 +119,7 @@ body {
   gap: 12px;
   box-sizing: border-box;
   color: #333;
+  flex-shrink: 0;
 }
 
 /* Unified Text Input Row */
@@ -290,6 +291,9 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
 }
 
 .toggle-switch-container {
@@ -342,12 +346,17 @@ input:checked + .slider-switch:before {
   font-size: 0.82rem;
   font-weight: 600;
   color: #4b5563;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 /* Utility buttons row */
 .utility-buttons-row {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .util-btn {
