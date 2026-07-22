@@ -395,7 +395,7 @@ function App() {
 
     try {
       const livePreviewBox = document.querySelector('.chat-preview-box');
-      const exportWidth = livePreviewBox ? livePreviewBox.clientWidth : 420;
+      const exportWidth = Math.max(livePreviewBox ? livePreviewBox.clientWidth : 420, 420);
 
       const messageElements = document.querySelectorAll('.chat-preview-message');
       const heights = Array.from(messageElements).map(el => el.getBoundingClientRect().height || el.offsetHeight);
@@ -525,10 +525,12 @@ function App() {
 
         await new Promise((resolve) => setTimeout(resolve, 50));
 
+        const exportScale = Math.max(Math.ceil(window.devicePixelRatio || 1) * 2, 3);
         const canvas = await html2canvas(tempContainer, {
-          scale: 3,
+          scale: exportScale,
           backgroundColor: '#e9e9e9',
           useCORS: true,
+          allowTaint: true,
           logging: false
         });
 

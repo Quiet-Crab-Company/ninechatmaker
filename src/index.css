@@ -707,12 +707,15 @@ input:checked + .slider-switch:before {
   display: flex;
   align-items: center;
   height: 56px;
+  min-height: 56px;
   padding: 0 16px;
   background-color: #000;
   color: #fff;
   flex-shrink: 0;
   box-sizing: border-box;
   z-index: 10;
+  position: sticky;
+  top: 0;
 }
 
 .preview-back-btn {
