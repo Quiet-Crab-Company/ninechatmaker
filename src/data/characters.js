@@ -24,7 +24,7 @@ export const characters = [
     "nameJp": "八雲 彗",
     "color": "#008839ff",
     "avatar": null,
-    "initialsEn": "AG",
+    "initialsEn": "YS",
     "initialsJp": "彗"
   },
   {
@@ -176,7 +176,7 @@ export const characters = [
     "name": "Zero",
     "nameJp": "ゼロ",
     "color": "#858585ff",
-    "avatar": null,
+    "avatar": "assets/zero.png",
     "initialsEn": "0",
     "initialsJp": "0"
   },
