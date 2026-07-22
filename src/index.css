@@ -1039,8 +1039,8 @@ input:checked + .slider-switch:before {
   
   .app-container {
     padding: 0 !important;
-    height: 100dvh !important;
-    max-height: 100dvh !important;
+    height: 100svh !important;
+    max-height: 100svh !important;
     overflow: hidden !important;
     gap: 0 !important;
     width: 100vw !important;
@@ -1054,9 +1054,9 @@ input:checked + .slider-switch:before {
   .unified-simulator-box {
     width: 100vw !important;
     max-width: 100vw !important;
-    height: 100dvh !important;
-    max-height: 100dvh !important;
-    min-height: 100dvh !important;
+    height: 100svh !important;
+    max-height: 100svh !important;
+    min-height: 100svh !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
