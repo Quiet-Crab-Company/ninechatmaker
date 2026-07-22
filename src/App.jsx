@@ -34,14 +34,10 @@ function App() {
     return localStorage.getItem('ninechat_recipient_id') || staticCharacters[0].id;
   });
   const [title, setTitle] = useState(() => {
-    const val = localStorage.getItem('ninechat_title') || '';
-    if (val === 'Title' || val === 'タイトル') return '';
-    return val;
+    return localStorage.getItem('ninechat_title') ?? '';
   });
   const [subtitle, setSubtitle] = useState(() => {
-    const val = localStorage.getItem('ninechat_subtitle') || '';
-    if (val === 'Change title and subtitle with the gear icon' || val === '歯車アイコンからタイトルとサブタイトルを変更できます') return '';
-    return val;
+    return localStorage.getItem('ninechat_subtitle') ?? '';
   });
   const [language, setLanguage] = useState('en');
   const [isExporting, setIsExporting] = useState(false);
@@ -89,24 +85,7 @@ function App() {
     prevLengthRef.current = messages.length;
   }, [messages]);
 
-  // Keep default title and subtitle in sync with active language if user has not custom-edited them
-  useEffect(() => {
-    if (language === 'jp') {
-      if (title === 'Title') {
-        setTitle('タイトル');
-      }
-      if (subtitle === 'Change title and subtitle with the gear icon') {
-        setSubtitle('歯車アイコンからタイトルとサブタイトルを変更できます');
-      }
-    } else {
-      if (title === 'タイトル') {
-        setTitle('Title');
-      }
-      if (subtitle === '歯車アイコンからタイトルとサブタイトルを変更できます') {
-        setSubtitle('Change title and subtitle with the gear icon');
-      }
-    }
-  }, [language]);
+
 
   // Close settings or custom drawers when tapping anywhere else outside them
   useEffect(() => {
