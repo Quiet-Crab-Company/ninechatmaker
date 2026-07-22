@@ -68,6 +68,7 @@ function App() {
   const [customColor, setCustomColor] = useState('#8a2be2');
   const customDrawerRef = useRef(null);
   const [deleteConfirmTarget, setDeleteConfirmTarget] = useState(null);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [isFilePickerActive, setIsFilePickerActive] = useState(false);
 
   const previewEndRef = useRef(null);
@@ -331,9 +332,7 @@ function App() {
   };
 
   const clearAll = () => {
-    if (window.confirm(language === 'jp' ? 'メッセージをすべて削除しますか？' : 'Are you sure you want to clear all messages?')) {
-      setMessages([]);
-    }
+    setShowClearConfirm(true);
   };
 
   // Logic to calculate unique speakers for top-right cluster
@@ -1158,6 +1157,39 @@ function App() {
                 }}
               >
                 {isJp ? '削除' : 'Delete'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Clear Messages Confirmation Modal Dialog */}
+      {showClearConfirm && (
+        <div className="modal-overlay" onClick={() => setShowClearConfirm(false)}>
+          <div className="modal-dialog delete-confirm-dialog" onClick={(e) => e.stopPropagation()}>
+            <h4>{isJp ? 'チャットをクリア' : 'Clear Chat'}</h4>
+            <p>
+              {isJp 
+                ? 'メッセージをすべて削除しますか？' 
+                : 'Are you sure you want to clear all messages?'}
+            </p>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="modal-btn cancel"
+                onClick={() => setShowClearConfirm(false)}
+              >
+                {isJp ? 'キャンセル' : 'Cancel'}
+              </button>
+              <button
+                type="button"
+                className="modal-btn confirm"
+                onClick={() => {
+                  setMessages([]);
+                  setShowClearConfirm(false);
+                }}
+              >
+                {isJp ? 'クリア' : 'Clear'}
               </button>
             </div>
           </div>
