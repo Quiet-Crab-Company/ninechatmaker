@@ -847,7 +847,7 @@ input:checked + .slider-switch:before {
 
 .chat-preview-message {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
@@ -972,7 +972,8 @@ input:checked + .slider-switch:before {
 }
 
 /* Stacked messages spacing */
-.chat-preview-message.stacked-message {
+.chat-preview-message.stacked-message,
+.chat-preview-message.followed-by-same {
   margin-bottom: 4px;
 }
 

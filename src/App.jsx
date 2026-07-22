@@ -632,7 +632,9 @@ function App() {
 
                   const isMe = msg.senderId === recipientId;
                   const prevMsg = index > 0 ? messages[index - 1] : null;
+                  const nextMsg = index < messages.length - 1 ? messages[index + 1] : null;
                   const showSenderInfo = !prevMsg || prevMsg.senderId !== msg.senderId;
+                  const isFollowedBySame = nextMsg && nextMsg.senderId === msg.senderId;
 
                   const isSticker = msg.messageType === 'stamp';
                   const stickerKey = msg.message.replace(/:/g, '');
@@ -643,7 +645,7 @@ function App() {
                     <div
                       key={msg.id}
                       className={`chat-preview-message ${isMe ? 'is-me' : 'is-other'} ${!showSenderInfo ? 'stacked-message' : ''
-                        } relative-message-row`}
+                        } ${isFollowedBySame ? 'followed-by-same' : ''} relative-message-row`}
                     >
                       {/* Left Hover Actions for Senders on the Right / Others */}
                       <div className={`message-hover-actions ${isMe ? 'actions-right' : 'actions-left'}`}>
