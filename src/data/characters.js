@@ -5,7 +5,7 @@ export const characters = [
     "name": "Kuronaka Yo",
     "nameJp": "黒中曜",
     "color": "#aa0c29",
-    "avatar": "/assets/kuronaka yo.png",
+    "avatar": "assets/kuronaka yo.png",
     "initialsEn": "KY",
     "initialsJp": "黒"
   },
@@ -14,7 +14,7 @@ export const characters = [
     "name": "Iroha Tsuki",
     "nameJp": "彩葉ツキ",
     "color": "#2491ca",
-    "avatar": "/assets/iroha tsuki.png",
+    "avatar": "assets/iroha tsuki.png",
     "initialsEn": "IT",
     "initialsJp": "彩"
   },
@@ -23,7 +23,7 @@ export const characters = [
     "name": "Aoyama Kazuki",
     "nameJp": "青山カズキ",
     "color": "#0d1ca4",
-    "avatar": "/assets/aoyama kazuki.png",
+    "avatar": "assets/aoyama kazuki.png",
     "initialsEn": "AK",
     "initialsJp": "青"
   },
@@ -32,7 +32,7 @@ export const characters = [
     "name": "Q",
     "nameJp": "Q",
     "color": "#3a1672",
-    "avatar": "/assets/q.png",
+    "avatar": "assets/q.png",
     "initialsEn": "Q",
     "initialsJp": "Q"
   },
@@ -41,7 +41,7 @@ export const characters = [
     "name": "Takinogawa Jio",
     "nameJp": "滝野川ジオウ",
     "color": "#2b6a22",
-    "avatar": "/assets/takinogawa jio.png",
+    "avatar": "assets/takinogawa jio.png",
     "initialsEn": "TJ",
     "initialsJp": "滝"
   },
@@ -50,7 +50,7 @@ export const characters = [
     "name": "Jujo Miu",
     "nameJp": "十条ミウ",
     "color": "#7e0f3b",
-    "avatar": "/assets/jujo miu.png",
+    "avatar": "assets/jujo miu.png",
     "initialsEn": "JM",
     "initialsJp": "十"
   },
@@ -59,7 +59,7 @@ export const characters = [
     "name": "Semba Tsuruko",
     "nameJp": "千羽つる子",
     "color": "#cc39a4",
-    "avatar": "/assets/semba tsuruko.png",
+    "avatar": "assets/semba tsuruko.png",
     "initialsEn": "ST",
     "initialsJp": "千"
   },
@@ -68,7 +68,7 @@ export const characters = [
     "name": "Kohinata Koishi",
     "nameJp": "小日向小石",
     "color": "#6ec53f",
-    "avatar": "/assets/kohinata koishi.png",
+    "avatar": "assets/kohinata koishi.png",
     "initialsEn": "KK",
     "initialsJp": "小"
   },
@@ -77,7 +77,7 @@ export const characters = [
     "name": "Senju Hyakuichitaro",
     "nameJp": "千住百一太郎",
     "color": "#b51f1b",
-    "avatar": "/assets/senju hyakuichitaro.png",
+    "avatar": "assets/senju hyakuichitaro.png",
     "initialsEn": "SH",
     "initialsJp": "千"
   },
@@ -86,7 +86,7 @@ export const characters = [
     "name": "Yukigaya Enoki",
     "nameJp": "雪谷えのき",
     "color": "#a036c0",
-    "avatar": "/assets/yukigaya enoki.png",
+    "avatar": "assets/yukigaya enoki.png",
     "initialsEn": "YE",
     "initialsJp": "雪"
   },
@@ -95,7 +95,7 @@ export const characters = [
     "name": "Saigo Roku",
     "nameJp": "西郷ロク",
     "color": "#a74a0d",
-    "avatar": "/assets/saigo roku.png",
+    "avatar": "assets/saigo roku.png",
     "initialsEn": "SR",
     "initialsJp": "西"
   },
@@ -104,7 +104,7 @@ export const characters = [
     "name": "Todoroki Eiji",
     "nameJp": "轟英二",
     "color": "#cf7808",
-    "avatar": "/assets/todoroki eiji.png",
+    "avatar": "assets/todoroki eiji.png",
     "initialsEn": "TE",
     "initialsJp": "轟"
   },
