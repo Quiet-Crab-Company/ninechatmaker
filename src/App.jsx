@@ -26,10 +26,19 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  const [messages, setMessages] = useState([]);
-  const [recipientId, setRecipientId] = useState(staticCharacters[0].id);
-  const [title, setTitle] = useState('Title');
-  const [subtitle, setSubtitle] = useState('Change title and subtitle with the gear icon');
+  const [messages, setMessages] = useState(() => {
+    const saved = localStorage.getItem('ninechat_messages');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [recipientId, setRecipientId] = useState(() => {
+    return localStorage.getItem('ninechat_recipient_id') || staticCharacters[0].id;
+  });
+  const [title, setTitle] = useState(() => {
+    return localStorage.getItem('ninechat_title') || 'Title';
+  });
+  const [subtitle, setSubtitle] = useState(() => {
+    return localStorage.getItem('ninechat_subtitle') || 'Change title and subtitle with the gear icon';
+  });
   const [language, setLanguage] = useState('en');
   const [isExporting, setIsExporting] = useState(false);
   const [exportProgress, setExportProgress] = useState('');
@@ -133,6 +142,23 @@ function App() {
       window.removeEventListener('focus', handleWindowFocus);
     };
   }, []);
+
+  // Sync editor preview settings and messages to localStorage
+  useEffect(() => {
+    localStorage.setItem('ninechat_messages', JSON.stringify(messages));
+  }, [messages]);
+
+  useEffect(() => {
+    localStorage.setItem('ninechat_recipient_id', recipientId);
+  }, [recipientId]);
+
+  useEffect(() => {
+    localStorage.setItem('ninechat_title', title);
+  }, [title]);
+
+  useEffect(() => {
+    localStorage.setItem('ninechat_subtitle', subtitle);
+  }, [subtitle]);
 
   const getCharacter = (id) => {
     return allCharacters.find((c) => c.id === id);
