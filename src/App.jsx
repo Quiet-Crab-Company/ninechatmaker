@@ -40,6 +40,9 @@ function App() {
     return localStorage.getItem('ninechat_subtitle') ?? '';
   });
   const [language, setLanguage] = useState('en');
+  const [useInitialsOnly, setUseInitialsOnly] = useState(() => {
+    return localStorage.getItem('ninechat_use_initials_only') === 'true';
+  });
   const [isExporting, setIsExporting] = useState(false);
   const [exportProgress, setExportProgress] = useState('');
 
@@ -156,6 +159,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem('ninechat_subtitle', subtitle);
   }, [subtitle]);
+
+  useEffect(() => {
+    localStorage.setItem('ninechat_use_initials_only', useInitialsOnly);
+  }, [useInitialsOnly]);
 
   const getCharacter = (id) => {
     return allCharacters.find((c) => c.id === id);
@@ -352,7 +359,7 @@ function App() {
     const isJp = language === 'jp';
     const initials = isJp ? char.initialsJp : char.initialsEn;
 
-    if (char.avatar) {
+    if (char.avatar && !useInitialsOnly) {
       return (
         <img
           src={char.avatar}
@@ -924,6 +931,22 @@ function App() {
                   onChange={(e) => setSubtitle(e.target.value)}
                   placeholder={isJp ? 'サブタイトルを入力...' : 'Enter subtitle...'}
                 />
+              </div>
+
+              <div className="drawer-field">
+                <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', margin: '4px 0 8px 0' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#4b5563' }}>
+                    {isJp ? '全キャラのアイコンにイニシャルを使用' : 'Use Initials for All Characters'}
+                  </span>
+                  <div className="toggle-switch-container">
+                    <input
+                      type="checkbox"
+                      checked={useInitialsOnly}
+                      onChange={(e) => setUseInitialsOnly(e.target.checked)}
+                    />
+                    <span className="slider-switch"></span>
+                  </div>
+                </label>
               </div>
 
               <div className="drawer-config-row">

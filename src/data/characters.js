@@ -16,7 +16,7 @@ export const characters = [
     "color": "#2491ca",
     "avatar": "assets/iroha tsuki.png",
     "initialsEn": "IT",
-    "initialsJp": "彩"
+    "initialsJp": "ツキ"
   },
   {
     "id": "sui",
@@ -75,11 +75,11 @@ export const characters = [
   {
     "id": "koishi",
     "name": "Kohinata Koishi",
-    "nameJp": "小日 向小石",
+    "nameJp": "小日向 小石",
     "color": "#6ec53f",
     "avatar": "assets/kohinata koishi.png",
     "initialsEn": "KK",
-    "initialsJp": "小"
+    "initialsJp": "小石"
   },
   {
     "id": "hyakuichitaro",
@@ -88,7 +88,7 @@ export const characters = [
     "color": "#b51f1b",
     "avatar": "assets/senju hyakuichitaro.png",
     "initialsEn": "SH",
-    "initialsJp": "千"
+    "initialsJp": "百一"
   },
   {
     "id": "enoki",
