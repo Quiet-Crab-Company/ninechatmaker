@@ -1079,6 +1079,8 @@ input:checked + .slider-switch:before {
     border-radius: 0 !important;
     padding: 12px 8px !important;
     padding-bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
   }
 }
 

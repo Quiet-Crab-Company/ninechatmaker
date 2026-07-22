@@ -101,7 +101,7 @@ function App() {
     const handleClickOutside = (event) => {
       if (showSettings) {
         const clickedDrawer = settingsDrawerRef.current && settingsDrawerRef.current.contains(event.target);
-        const clickedButton = settingsButtonRef.current && settingsButtonRef.current.contains(event.target);
+        const clickedButton = event.target.closest('.util-btn') || (settingsButtonRef.current && settingsButtonRef.current.contains(event.target));
         if (!clickedDrawer && !clickedButton) {
           setShowSettings(false);
         }
@@ -116,7 +116,8 @@ function App() {
       }
       if (showSpeakerDropdown) {
         const clickedDropdown = speakerDropdownRef.current && speakerDropdownRef.current.contains(event.target);
-        if (!clickedDropdown) {
+        const clickedTrigger = event.target.closest('.speaker-dropdown-trigger');
+        if (!clickedDropdown && !clickedTrigger) {
           setShowSpeakerDropdown(false);
         }
       }
