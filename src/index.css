@@ -976,6 +976,22 @@ input:checked + .slider-switch:before {
   margin-bottom: 4px;
 }
 
+.chat-preview-message.is-me.stacked-message {
+  padding-right: 58px;
+}
+
+.chat-preview-message.is-other.stacked-message {
+  padding-left: 58px;
+}
+
+.chat-preview-message.is-me.stacked-message .message-bubble-wrapper {
+  margin-right: 0;
+}
+
+.chat-preview-message.is-other.stacked-message .message-bubble-wrapper {
+  margin-left: 0;
+}
+
 .message-sticker-wrapper {
   max-width: 130px;
   margin: 4px 8px;

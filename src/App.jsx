@@ -658,13 +658,9 @@ function App() {
                       </div>
 
                       {/* Left Avatar for others */}
-                      {!isMe && (
+                      {!isMe && showSenderInfo && (
                         <div className="message-avatar-container">
-                          {showSenderInfo ? (
-                            renderAvatar(char, 'avatar-normal')
-                          ) : (
-                            <div style={{ width: '50px', height: '50px', flexShrink: 0 }}></div>
-                          )}
+                          {renderAvatar(char, 'avatar-normal')}
                         </div>
                       )}
 
@@ -711,13 +707,9 @@ function App() {
                       </div>
 
                       {/* Right Avatar for me */}
-                      {isMe && (
+                      {isMe && showSenderInfo && (
                         <div className="message-avatar-container">
-                          {showSenderInfo ? (
-                            renderAvatar(char, 'avatar-normal')
-                          ) : (
-                            <div style={{ width: '50px', height: '50px', flexShrink: 0 }}></div>
-                          )}
+                          {renderAvatar(char, 'avatar-normal')}
                         </div>
                       )}
                     </div>
