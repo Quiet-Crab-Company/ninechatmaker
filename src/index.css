@@ -714,8 +714,6 @@ input:checked + .slider-switch:before {
   flex-shrink: 0;
   box-sizing: border-box;
   z-index: 10;
-  position: sticky;
-  top: 0;
 }
 
 .preview-back-btn {
