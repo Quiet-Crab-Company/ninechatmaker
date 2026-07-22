@@ -1033,8 +1033,11 @@ input:checked + .slider-switch:before {
 
 /* Mobile full-screen simulator layout override */
 @media (max-width: 600px) {
-  body {
-    overflow: hidden;
+  html, body {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
   }
   
   .app-container {

@@ -72,6 +72,7 @@ function App() {
   const [isFilePickerActive, setIsFilePickerActive] = useState(false);
 
   const previewEndRef = useRef(null);
+  const chatBodyRef = useRef(null);
   const prevLengthRef = useRef(0);
   const settingsDrawerRef = useRef(null);
   const settingsButtonRef = useRef(null);
@@ -80,7 +81,12 @@ function App() {
   // Auto-scroll inside the simulator body only when new messages are added or on mount
   useEffect(() => {
     if (messages.length > prevLengthRef.current) {
-      previewEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      if (chatBodyRef.current) {
+        chatBodyRef.current.scrollTo({
+          top: chatBodyRef.current.scrollHeight,
+          behavior: prevLengthRef.current === 0 ? 'auto' : 'smooth',
+        });
+      }
     }
     prevLengthRef.current = messages.length;
   }, [messages]);
@@ -610,7 +616,7 @@ function App() {
           </div>
 
           {/* Timeline Messages Area */}
-          <div className="chat-preview-body">
+          <div className="chat-preview-body" ref={chatBodyRef}>
             {messages.length === 0 ? (
               <div className="empty-chat-hint">
                 <p>{isJp ? 'メッセージがありません。下の入力フォームからメッセージを送信してください。' : 'No messages yet. Send a message below.'}</p>
