@@ -1,16 +1,38 @@
-# React + Vite
+# NINE Chat Maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A fanmade web tool for creating mock **NINE chat** conversation screenshots inspired by the mobile game **Tribe Nine**.
 
-Currently, two official plugins are available:
+🔗 **Live App:** [https://quiet-crab-company.github.io/ninechatmaker/](https://quiet-crab-company.github.io/ninechatmaker/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Simulate NINE-style chat conversations between characters from Tribe Nine
+- Choose from a roster of pre-loaded characters, or create your own custom characters with initials, avatar image, or image URL
+- Toggle between sending as yourself or as other characters
+- Add sticker messages
+- Export the full conversation as a high-resolution PNG image (or ZIP for multi-page chats)
+- Persistent chat history — conversations are saved in the browser across sessions
+- Bilingual UI — supports English and Japanese
+- Mobile-friendly layout
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠️ Built With
+
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- [html2canvas](https://html2canvas.hertzen.com/) for image export
+- [JSZip](https://stuk.github.io/jszip/) for multi-page ZIP export
+- [Lucide React](https://lucide.dev/) for icons
+- Deployed via [GitHub Pages](https://pages.github.com/)
+
+---
+
+## ⚠️ Disclaimer
+
+This is an **unofficial fanmade tool** created for entertainment purposes only.
+
+**Tribe Nine** and all related characters, names, and assets are the property of **Akatsuki Inc.** and **Akatsuki Games Inc.** This project is not affiliated with, endorsed by, or officially connected to Tribe Nine or its developers in any way.
+
+Character artwork and game assets belong to their respective owners. No copyright infringement is intended.
